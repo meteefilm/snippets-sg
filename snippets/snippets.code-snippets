@@ -1,0 +1,122 @@
+{
+	"usePage": {
+		"prefix": ["usePage","up"],
+		"body": [
+			"const page = usePage();"
+		],
+		"description": "use hook usePage function"
+	},
+	"useLoading": {
+		"prefix": ["useLoading","ul"],
+		"body": [
+			"const { setIsLoading, setAlert } = useLoading();"
+		],
+		"description": "use hook useLoading function"
+	},
+	"useLoading Loading": {
+		"prefix": ["ull"],
+		"body": [
+			"const { setIsLoading } = useLoading();"
+		],
+		"description": "use hook useLoading function"
+	},
+	"useLoading Alert": {
+		"prefix": ["ula"],
+		"body": [
+			"const { setAlert } = useLoading();"
+		],
+		"description": "use hook useLoading function"
+	},
+	"useNavigate": {
+		"prefix": ["useNavigate","un"],
+		"body": [
+			"const navigate = useNavigate();"
+		],
+		"description": "use hook useNavigate function"
+	},
+	"useParams": {
+		"prefix": ["useParams","up"],
+		"body": [
+			"const {$id} = useParams();"
+		],
+		"description": "use hook useParams function"
+	},
+	"useState submitted": {
+		"prefix": ["uss"],
+		"body": [
+			"const [submitted, setSubmitted] = useState(false);"
+		],
+		"description": "submitted state"
+	},
+	"useDialog warn": {
+		"prefix": ["udw"],
+		"body": [
+			"const {setDialogWarn} = useDialog();"
+		],
+		"description": "use component DialogWarning"
+	},
+	"useDialog show": {
+		"prefix": ["uds"],
+		"body": [
+			"const {setDialogShow} = useDialog();"
+		],
+		"description": "use component DialogShow"
+	},
+	"useDialog File": {
+		"prefix": ["udf"],
+		"body": [
+			"const {setDialogFile} = useDialog();"
+		],
+		"description": "use component DialogOpenFile"
+	},
+	"useDialog": {
+		"prefix": ["ud","useDialog"],
+		"body": [
+			"const {setDialogWarn, setDialogShow} = useDialog();"
+		],
+		"description": "submitted state"
+	},
+	"useDialog All": {
+		"prefix": ["uda"],
+		"body": [
+			"const {setDialogWarn, setDialogShow, setDialogFile} = useDialog();"
+		],
+		"description": "submitted state"
+	},
+	"useDialog All - param": {
+		"prefix": ["uda"],
+		"body": [
+			"const isDialog = useDialog();"
+		],
+		"description": "submitted state"
+	},
+	"onInputTextChange props" :{
+		"prefix": ["itcp","onInputTextChange"],
+		"body": [
+			"const onInputTextChange = (e, key) => {",
+			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
+			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';",
+			"",
+			"\tprops.setData({",
+			"\t\t...props.data,",
+			"\t\t[id]: val,",
+			"\t});",
+			"};"
+		]
+	},
+	"onInputTextChange" :{
+		"prefix": ["itc"],
+		"body": [
+			"const onInputTextChange = (e, key) => {",
+			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
+			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';",
+			"",
+			"\tsetData({",
+			"\t\t...data,",
+			"\t\t[id]: val,",
+			"\t});",
+			"};"
+		]
+	}
+
+}

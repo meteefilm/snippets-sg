@@ -1,0 +1,30 @@
+{
+  "name": "snippets-sg",
+  "displayName": "snippets-sg",
+  "description": "this is snippet for personal",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meteefilm/snippets-sg.git"
+  },
+  "author": "Metee Khumchat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meteefilm/snippets-sg/issues"
+  },
+  "homepage": "https://github.com/meteefilm/snippets-sg#readme",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
