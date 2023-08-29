@@ -3,6 +3,7 @@
   "displayName": "snippets-sg",
   "description": "this is snippet for personal",
   "version": "0.0.1",
+  "publisher" : "meteekc",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meteefilm/snippets-sg.git"
