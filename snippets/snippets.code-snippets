@@ -35,7 +35,7 @@
 		"description": "use hook useNavigate function"
 	},
 	"useParams": {
-		"prefix": ["useParams","up"],
+		"prefix": ["useParams","upr"],
 		"body": [
 			"const {$id} = useParams();"
 		],
@@ -53,42 +53,42 @@
 		"body": [
 			"const {setDialogWarn} = useDialog();"
 		],
-		"description": "use component DialogWarning"
+		"description": "use hook useDialog function - DialogWarning"
 	},
 	"useDialog show": {
 		"prefix": ["uds"],
 		"body": [
 			"const {setDialogShow} = useDialog();"
 		],
-		"description": "use component DialogShow"
+		"description": "use hook useDialog function - DialogShow"
 	},
 	"useDialog File": {
 		"prefix": ["udf"],
 		"body": [
 			"const {setDialogFile} = useDialog();"
 		],
-		"description": "use component DialogOpenFile"
+		"description": "use hook useDialog function - DialogOpenFile"
 	},
 	"useDialog": {
 		"prefix": ["ud","useDialog"],
 		"body": [
 			"const {setDialogWarn, setDialogShow} = useDialog();"
 		],
-		"description": "submitted state"
+		"description": "use hook useDialog function - DialogShow,DialogWarning"
 	},
 	"useDialog All": {
 		"prefix": ["uda"],
 		"body": [
 			"const {setDialogWarn, setDialogShow, setDialogFile} = useDialog();"
 		],
-		"description": "submitted state"
+		"description": "use hook useDialog function"
 	},
 	"useDialog All - param": {
-		"prefix": ["uda"],
+		"prefix": ["udap"],
 		"body": [
 			"const isDialog = useDialog();"
 		],
-		"description": "submitted state"
+		"description": "use hook useDialog function - params"
 	},
 	"onInputTextChange props" :{
 		"prefix": ["itcp","onInputTextChange"],
@@ -102,7 +102,9 @@
 			"\t\t[id]: val,",
 			"\t});",
 			"};"
-		]
+		],
+		"description": "onInputTextChange function - props"
+
 	},
 	"onInputTextChange" :{
 		"prefix": ["itc"],
@@ -116,7 +118,8 @@
 			"\t\t[id]: val,",
 			"\t});",
 			"};"
-		]
+		],
+		"description": "onInputTextChange function"
 	}
 
 }

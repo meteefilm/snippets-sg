@@ -2,7 +2,7 @@
   "name": "snippets-sg",
   "displayName": "snippets-sg",
   "description": "this is snippet for personal",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher" : "meteekc",
   "repository": {
     "type": "git",
@@ -13,9 +13,10 @@
   "bugs": {
     "url": "https://github.com/meteefilm/snippets-sg/issues"
   },
+  "icon" : "images/post-it.png",
   "homepage": "https://github.com/meteefilm/snippets-sg#readme",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.77.0"
   },
   "categories": [
     "Snippets"
