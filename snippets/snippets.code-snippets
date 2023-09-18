@@ -90,17 +90,23 @@
 		],
 		"description": "use hook useDialog function - params"
 	},
+	"useAPI": {
+		"prefix": ["ua","useAPI"],
+		"body": [
+			"const [on$apiCall]= useAPI($api)"
+		],
+		"description": "useAPI normal"
+	},
 	"onInputTextChange props" :{
 		"prefix": ["itcp","onInputTextChange"],
 		"body": [
 			"const onInputTextChange = (e, key) => {",
 			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
 			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';",
-			"",
-			"\tprops.setData({",
-			"\t\t...props.data,",
+			"\tprops.setData((preState)=>({",
+			"\t\t...preState,",
 			"\t\t[id]: val,",
-			"\t});",
+			"\t}));",
 			"};"
 		],
 		"description": "onInputTextChange function - props"
@@ -111,12 +117,11 @@
 		"body": [
 			"const onInputTextChange = (e, key) => {",
 			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
-			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';",
-			"",
-			"\tsetData({",
-			"\t\t...data,",
+			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
+			"\tsetData((preState)=>({",
+			"\t\t...preState,",
 			"\t\t[id]: val,",
-			"\t});",
+			"\t}));",
 			"};"
 		],
 		"description": "onInputTextChange function"
