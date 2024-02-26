@@ -6,6 +6,14 @@ This is custom personal snippets for help to codding reactJS
 |-------------------|--------------------------------------------------------|
 | up                | usePage function                                       |
 | usePage           | usePage function                                       |
+| ua                | useAPI function                                        |
+| useAPI            | useAPI function                                        |
+| uaf               | useAPIFile function                                    |
+| useAPIFile        | useAPIFile function                                    |
+| ums               | useMasterStore function                                |
+| useMasterStore    | useMasterStore function                                |
+| ut                | useTranslation function                                |
+| useTranslation    | useTranslation function                                |
 | ul                | useLoading function - Full                             |
 | useLoading        | useLoading function - Full                             |
 | ull               | useLoading function - Loading only                     |
@@ -29,6 +37,26 @@ This is custom personal snippets for help to codding reactJS
 **usePage, up** - usePage function
 ~~~js 
   const page = usePage();
+~~~
+
+**useTranslation, ut** - useTranslation function
+~~~js 
+  const {t} = useTranslation();
+~~~
+
+**useAPI, ua** - useAPI function
+~~~js 
+  const [functionName]= useAPI(servicename.pathname);
+~~~
+
+**useAPIFile, uaf** - usePage function
+~~~js 
+  const [functionName]= useAPI(servicename.pathname);
+~~~
+
+**useMasterStore, ums** - useMasterStore function
+~~~js 
+  const [functionName]= useMasterStore(search);
 ~~~
 
 **useLoading, ul** - useLoading function Full

@@ -6,6 +6,13 @@
 		],
 		"description": "use hook usePage function"
 	},
+	"useTranslation": {
+		"prefix": ["useTranslation","ut"],
+		"body": [
+			"const {t} = useTranslation();"
+		],
+		"description": "useTranslation function"
+	},
 	"useLoading": {
 		"prefix": ["useLoading","ul"],
 		"body": [
@@ -93,9 +100,25 @@
 	"useAPI": {
 		"prefix": ["ua","useAPI"],
 		"body": [
-			"const [on$apiCall]= useAPI($api)"
+			"const [on$2]= useAPI($1.$2)",
+			"$0"
 		],
-		"description": "useAPI normal"
+		"description": "use hook useAPI function"
+	},
+	"useAPIFile": {
+		"prefix": ["uaf","useAPIFile"],
+		"body": [
+			"const [on$2]= useAPIFile($1.$2)",
+			"$0"
+		],
+		"description": "use hook useAPIFile function"
+	},
+	"useMasterStore": {
+		"prefix": ["ums","useMasterStore"],
+		"body": [
+			"const [${2}List]= useMasterStore($1)",
+		],
+		"description": "use hook useMasterStore function"
 	},
 	"onInputTextChange props" :{
 		"prefix": ["itcp","onInputTextChange"],
