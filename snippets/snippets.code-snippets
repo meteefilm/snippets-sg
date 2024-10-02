@@ -97,6 +97,13 @@
 		],
 		"description": "use hook useDialog function - params"
 	},
+	"useConfig": {
+		"prefix": ["ufp","useConfig"],
+		"body": [
+			"const {basePath} = useConfig();"
+		],
+		"description": "use hook useConfig function"
+	},
 	"useAPI": {
 		"prefix": ["ua","useAPI"],
 		"body": [
@@ -148,6 +155,19 @@
 			"};"
 		],
 		"description": "onInputTextChange function"
+	},
+	"TS onInputTextChange" :{
+		"prefix": ["itct"],
+		"body": [
+			"const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { id: string; value?: string; checked?: boolean } }, key?: string) => {",
+			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
+			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
+			"\tsetData((preState)=>({",
+			"\t\t...preState,",
+			"\t\t[id]: val,",
+			"\t}));",
+			"};"
+		],
+		"description": "onInputTextChange TS function"
 	}
-
 }

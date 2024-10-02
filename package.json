@@ -3,7 +3,7 @@
   "displayName": "snippets-sg",
   "description": "this is snippet for personal",
   "version": "1.2.0",
-  "publisher" : "meteekc",
+  "publisher": "meteekc",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meteefilm/snippets-sg.git"
@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/meteefilm/snippets-sg/issues"
   },
-  "icon" : "images/post-it.png",
+  "icon": "images/post-it.png",
   "homepage": "https://github.com/meteefilm/snippets-sg#readme",
   "engines": {
     "vscode": "^1.77.0"
@@ -26,7 +26,18 @@
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.code-snippets"
       }
     ]
+  },
+  "dependencies": {
+    "snippets-sg": "file:"
   }
 }
