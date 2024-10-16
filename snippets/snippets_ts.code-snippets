@@ -34,17 +34,25 @@
 		],
 		"description": "use hook useLoading function"
 	},
-	"useNavigate": {
-		"prefix": ["useNavigate","un"],
+	"useRouter": {
+		"prefix": ["useRouter","urt"],
 		"body": [
-			"const navigate = useNavigate();"
+			"const router = useRouter();"
 		],
-		"description": "use hook useNavigate function"
+		"description": "next/navigation useRouter hook function "
 	},
-	"useParams": {
-		"prefix": ["useParams","upr"],
+	"useSearchParams": {
+		"prefix": ["useSearchParams","usp"],
 		"body": [
-			"const {$id} = useParams();"
+			"const {$id} = useSearchParams();"
+		],
+		"description": "use hook useParams function"
+	},
+	"useSearchParams Get": {
+		"prefix": ["useSearchParams","usp" ,"uspg"],
+		"body": [
+			"const searchParams = useSearchParams();",
+			"const $id = searchParams.get('$id'),"
 		],
 		"description": "use hook useParams function"
 	},
@@ -98,7 +106,7 @@
 		"description": "use hook useDialog function - params"
 	},
 	"useConfig": {
-		"prefix": ["ufp","useConfig"],
+		"prefix": ["ucf","ucfb","useConfig"],
 		"body": [
 			"const {basePath} = useConfig();"
 		],
@@ -130,9 +138,9 @@
 	"onInputTextChange props" :{
 		"prefix": ["itcp","onInputTextChange"],
 		"body": [
-			"const onInputTextChange = (e, key) => {",
+			"const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { id: string; value?: string; checked?: boolean } }, key?: string) => {",
 			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
-			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';",
+			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
 			"\tprops.setData((preState)=>({",
 			"\t\t...preState,",
 			"\t\t[id]: val,",
@@ -145,7 +153,7 @@
 	"onInputTextChange" :{
 		"prefix": ["itc"],
 		"body": [
-			"const onInputTextChange = (e, key) => {",
+			"const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { id: string; value?: string; checked?: boolean } }, key?: string) => {",
 			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
 			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
 			"\tsetData((preState)=>({",

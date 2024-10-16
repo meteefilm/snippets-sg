@@ -29,11 +29,11 @@
       },
       {
         "language": "typescript",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/snippets_ts.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/snippets_ts.code-snippets"
       }
     ]
   },
