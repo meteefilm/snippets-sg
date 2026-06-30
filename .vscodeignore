@@ -5,3 +5,4 @@ vsc-extension-quickstart.md
 *.vsix
 node_modules/**
 package-lock.json
+images/post-it.png

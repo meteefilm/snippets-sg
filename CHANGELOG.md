@@ -8,6 +8,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
+## [1.5.1]
+
+- Replace the extension icon with a professional snippets/utility themed icon.
+- Exclude the previous `post-it.png` icon from packaged output.
+
 ## [1.5.0]
 
 - Add project hook snippets based on `nt-nsw-register/layout/hooks`.
