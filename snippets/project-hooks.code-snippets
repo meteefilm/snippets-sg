@@ -1,0 +1,200 @@
+{
+	"project hooks import": {
+		"prefix": ["uhi", "uh-import"],
+		"body": [
+			"import useAPI from '@/layout/hooks/useAPI';",
+			"import useAPIFile from '@/layout/hooks/useAPIFile';",
+			"import { usePage } from '@/layout/hooks/usePage';",
+			"import { useLoading } from '@/layout/hooks/useLoading';",
+			"import { useDialog } from '@/layout/hooks/useDialog';"
+		],
+		"description": "Import common project hooks"
+	},
+	"project hook usePage": {
+		"prefix": ["uhp", "uhpage", "uh-page", "usePage"],
+		"body": [
+			"const page = usePage();"
+		],
+		"description": "Use project usePage hook"
+	},
+	"project hook useConfig": {
+		"prefix": ["uhc", "uhconfig", "uh-config", "useConfig"],
+		"body": [
+			"const { basePath, projectName, ISamUrl } = useConfig();"
+		],
+		"description": "Use project useConfig hook"
+	},
+	"project hook useAPI list": {
+		"prefix": ["uhai", "uhapi", "uh-api", "useAPI"],
+		"body": [
+			"const [on${1:List}, ${2:dataList}, set${3:DataList}, totalRecords] = useAPI(${4:ReNswService.${1:List}}, '${5:list}');"
+		],
+		"description": "Use project useAPI hook with data state"
+	},
+	"project hook useAPI update": {
+		"prefix": ["uhau", "uhapiu", "uh-api-update"],
+		"body": [
+			"const [on${1:Update}] = useAPI(${2:ReNswService.${1:Update}}, '${3:update}', ${4:false}, ${5:true});"
+		],
+		"description": "Use project useAPI hook for update action"
+	},
+	"project hook useAPI hidden": {
+		"prefix": ["uhah", "uhapih", "uh-api-hidden"],
+		"body": [
+			"const [on${1:Update}] = useAPI(${2:ReNswService.${1:Update}}, '${3:update}', true, ${4:false});"
+		],
+		"description": "Use project useAPI hook without dialog/loading"
+	},
+	"project hook useAPIFile": {
+		"prefix": ["uhaf", "uhfile", "uh-api-file", "useAPIFile"],
+		"body": [
+			"const [on${1:Export}] = useAPIFile(${2:ReNswService.${1:Export}});"
+		],
+		"description": "Use project useAPIFile hook"
+	},
+	"project hook useMultipart": {
+		"prefix": ["uhmp", "uhmulti", "uh-multipart", "useMultipart"],
+		"body": [
+			"const [on${1:Upload}] = useMultipart(${2:ReNswService.${1:Upload}}, '${3:update}');"
+		],
+		"description": "Use project useMultipart hook"
+	},
+	"project hook useLoading": {
+		"prefix": ["uhl", "uhload", "uh-loading", "useLoading"],
+		"body": [
+			"const { isLoading, setIsLoading, setAlert, addApiLoading, delApiLoading } = useLoading();"
+		],
+		"description": "Use project useLoading hook"
+	},
+	"project hook setAlert": {
+		"prefix": ["uha", "uhalert", "uh-alert", "setAlert"],
+		"body": [
+			"setAlert({",
+			"\ttype: '${1:success}',",
+			"\ttext: '${2:บันทึกข้อมูลสำเร็จ}',",
+			"\tmode: '${3:sweetalert}'",
+			"});"
+		],
+		"description": "Set project alert message"
+	},
+	"project hook useDialog": {
+		"prefix": ["uhd", "uhdialog", "uh-dialog", "useDialog"],
+		"body": [
+			"const { setDialogWarn, setDialogShow, setDialogFile, setDialogMap } = useDialog();"
+		],
+		"description": "Use project useDialog hook"
+	},
+	"project hook dialog show": {
+		"prefix": ["uhds", "uhdshow", "uh-dialog-show"],
+		"body": [
+			"setDialogShow({ dialog: true, mode: '${1:I}' });"
+		],
+		"description": "Open project success dialog"
+	},
+	"project hook dialog warn": {
+		"prefix": ["uhdw", "uhdwarn", "uh-dialog-warn"],
+		"body": [
+			"setDialogWarn({ dialog: true, text: '${1:กรุณาตรวจสอบข้อมูล}' });"
+		],
+		"description": "Open project warning dialog"
+	},
+	"project hook useMasterStore": {
+		"prefix": ["uhms", "uhmaster", "uh-master", "useMasterStore"],
+		"body": [
+			"const [${1:masterList}] = useMasterStore('${2:CT_TYPE}');"
+		],
+		"description": "Use project useMasterStore hook by ctType"
+	},
+	"project hook useMasterStore object": {
+		"prefix": ["uhmso", "uhmastero", "uh-master-object"],
+		"body": [
+			"const [${1:masterList}] = useMasterStore({ ctType: '${2:CT_TYPE}', status: '${3:A}' });"
+		],
+		"description": "Use project useMasterStore hook with object filter"
+	},
+	"project hook useMasterStoreCTT": {
+		"prefix": ["uhmct", "uhmasterctt", "uh-master-ctt"],
+		"body": [
+			"const [${1:masterList}] = useMasterStoreCTT(${2:''}, ${3:ReNswService.CtTableCodeList});"
+		],
+		"description": "Use project useMasterStoreCTT hook"
+	},
+	"project hook useLocalStorage": {
+		"prefix": ["uhls", "uh-local-storage", "useLocalStorage"],
+		"body": [
+			"const [${1:store}, set${2:Store}] = useLocalStorage<${3:Record<string, any>}>('${4:key}');"
+		],
+		"description": "Use project encrypted local storage hook"
+	},
+	"project hook useLocalSearch": {
+		"prefix": ["uhsearch", "uhlsearch", "uh-local-search", "useLocalSearch"],
+		"body": [
+			"const [${1:searchData}, set${2:SearchData}, remove${3:SearchData}, loadSearch] = useLocalSearch('${4:pageKey}');"
+		],
+		"description": "Use project local search hook"
+	},
+	"project hook useDisableRole": {
+		"prefix": ["uhr", "uhrole", "uh-disable-role", "useDisableRole"],
+		"body": [
+			"const { customerRole, userRole } = useDisableRole();"
+		],
+		"description": "Use project disable role hook"
+	},
+	"project hook useScreenSize": {
+		"prefix": ["uhss", "uhscreen", "uh-screen", "useScreenSize"],
+		"body": [
+			"const ${1:isMobile} = useScreenSize(${2:768});"
+		],
+		"description": "Use project screen size hook"
+	},
+	"project hook useTicker": {
+		"prefix": ["uht", "uhticker", "uh-ticker", "useTicker"],
+		"body": [
+			"const { days, hours, minutes, seconds, isTimeUp } = useTicker({",
+			"\tdays: ${1:0},",
+			"\thours: ${2:0},",
+			"\tminutes: ${3:5},",
+			"\tseconds: ${4:0}",
+			"});"
+		],
+		"description": "Use project countdown ticker hook"
+	},
+	"project hook useSwipeNotification": {
+		"prefix": ["uhsw", "uhswipe", "uh-swipe", "useSwipeNotification"],
+		"body": [
+			"const { activeId, dx, onPointerDown, onPointerMove, onPointerUp, reset } = useSwipeNotification({",
+			"\tswipeThresholdPx: ${1:40},",
+			"\tactionThresholdPx: ${2:90},",
+			"\tclampPx: ${3:240}",
+			"});"
+		],
+		"description": "Use project swipe notification hook"
+	},
+	"project hook useAuthLog": {
+		"prefix": ["uhlog", "uhauth", "uh-auth-log", "useAuthLog"],
+		"body": [
+			"const { sendLog } = useAuthLog();",
+			"",
+			"await sendLog({",
+			"\tactionType: '${1:1}',",
+			"\tlogResult: '${2:Success}',",
+			"\tuserId: ${3:page.userId},",
+			"\tcustomerId: ${4:page.customerId}",
+			"});"
+		],
+		"description": "Use project auth log hook"
+	},
+	"project hook providers": {
+		"prefix": ["uhpv", "uhproviders", "uh-providers"],
+		"body": [
+			"<LoadingProvider>",
+			"\t<DialogProvider>",
+			"\t\t<MasterDataProvider>",
+			"\t\t\t${1:{children}}",
+			"\t\t</MasterDataProvider>",
+			"\t</DialogProvider>",
+			"</LoadingProvider>"
+		],
+		"description": "Wrap app with project hook providers"
+	}
+}

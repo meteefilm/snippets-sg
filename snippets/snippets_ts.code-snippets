@@ -1,4 +1,50 @@
 {
+	"React import": {
+		"prefix": ["imr", "ir"],
+		"body": [
+			"import React from 'react';"
+		],
+		"description": "Import React"
+	},
+	"React import hooks": {
+		"prefix": ["imrh", "irh"],
+		"body": [
+			"import React, { useEffect, useState } from 'react';"
+		],
+		"description": "Import React with useEffect and useState"
+	},
+	"useState": {
+		"prefix": ["us", "ust", "useState"],
+		"body": [
+			"const [${1:value}, set${2:Value}] = useState(${3:''});"
+		],
+		"description": "React useState"
+	},
+	"useState typed": {
+		"prefix": ["usts", "useStateType"],
+		"body": [
+			"const [${1:value}, set${2:Value}] = useState<${3:string}>(${4:''});"
+		],
+		"description": "React useState with TypeScript generic"
+	},
+	"useEffect": {
+		"prefix": ["ue", "useEffect"],
+		"body": [
+			"useEffect(() => {",
+			"\t${1}",
+			"}, [${2}]);"
+		],
+		"description": "React useEffect"
+	},
+	"useEffect empty deps": {
+		"prefix": ["ued", "useEffectEmpty"],
+		"body": [
+			"useEffect(() => {",
+			"\t${1}",
+			"}, []);"
+		],
+		"description": "React useEffect with empty dependencies"
+	},
 	"usePage": {
 		"prefix": ["usePage","up"],
 		"body": [
@@ -131,17 +177,21 @@
 	"useMasterStore": {
 		"prefix": ["ums","useMasterStore"],
 		"body": [
-			"const [${2}List]= useMasterStore($1)",
+			"const [${2}List]= useMasterStore($1)"
 		],
 		"description": "use hook useMasterStore function"
 	},
 	"onInputTextChange props" :{
 		"prefix": ["itcp","onInputTextChange"],
 		"body": [
-			"const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { id: string; value?: string; checked?: boolean } }, key?: string) => {",
-			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
-			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
-			"\tprops.setData((preState)=>({",
+			"type InputTextChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;",
+			"",
+			"const onInputTextChange = (e: InputTextChangeEvent, key = '') => {",
+			"\tconst target = e.target;",
+			"\tconst id = key || target.id || '';",
+			"\tconst val = target.value ?? '';",
+			"",
+			"\tprops.setData((preState: any) => ({",
 			"\t\t...preState,",
 			"\t\t[id]: val,",
 			"\t}));",
@@ -153,15 +203,37 @@
 	"onInputTextChange" :{
 		"prefix": ["itc"],
 		"body": [
-			"const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { id: string; value?: string; checked?: boolean } }, key?: string) => {",
-			"\tlet val = (e.target && e.target.value !== undefined)?e.target.value  :'';",
-			"\tlet id = key && key !== '' ? key : (e.target && e.target.id) || '';\n",
-			"\tsetData((preState)=>({",
+			"type InputTextChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;",
+			"",
+			"const onInputTextChange = (e: InputTextChangeEvent, key = '') => {",
+			"\tconst target = e.target;",
+			"\tconst id = key || target.id || '';",
+			"\tconst val = target.value ?? '';",
+			"",
+			"\tsetData((preState: any) => ({",
 			"\t\t...preState,",
 			"\t\t[id]: val,",
 			"\t}));",
 			"};"
 		],
 		"description": "onInputTextChange function"
+	},
+	"onInputCheckedChange" :{
+		"prefix": ["ick", "onInputCheckedChange"],
+		"body": [
+			"type InputCheckedChangeEvent = React.ChangeEvent<HTMLInputElement>;",
+			"",
+			"const onInputCheckedChange = (e: InputCheckedChangeEvent, key = '') => {",
+			"\tconst target = e.target;",
+			"\tconst id = key || target.id || '';",
+			"\tconst checked = target.checked;",
+			"",
+			"\tsetData((preState: any) => ({",
+			"\t\t...preState,",
+			"\t\t[id]: checked,",
+			"\t}));",
+			"};"
+		],
+		"description": "onInputCheckedChange function"
 	}
 }

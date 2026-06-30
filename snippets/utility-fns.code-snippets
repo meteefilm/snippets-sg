@@ -1,0 +1,222 @@
+{
+	"utility-fns import common": {
+		"prefix": ["ufi", "uf-import"],
+		"body": [
+			"import { ${1:NullString}, ${2:reqKeys}, ${3:formatDate} } from 'utility-fns';"
+		],
+		"description": "Import common utility-fns helpers"
+	},
+	"utility-fns import null helpers": {
+		"prefix": ["ufn", "uf-null"],
+		"body": [
+			"import { NullString, NullInt, NullArray, NullSelect, NullPicture, NullToPoint, ZeroToNull, toStringSafe, isBlank } from 'utility-fns';"
+		],
+		"description": "Import utility-fns null/default helpers"
+	},
+	"utility-fns NullString": {
+		"prefix": ["ufns", "uf-ns", "NullString"],
+		"body": [
+			"NullString(${1:value})"
+		],
+		"description": "utility-fns NullString"
+	},
+	"utility-fns NullInt": {
+		"prefix": ["ufni", "uf-ni", "NullInt"],
+		"body": [
+			"NullInt(${1:value})"
+		],
+		"description": "utility-fns NullInt"
+	},
+	"utility-fns NullArray": {
+		"prefix": ["ufna", "uf-na", "NullArray"],
+		"body": [
+			"NullArray(${1:value})"
+		],
+		"description": "utility-fns NullArray"
+	},
+	"utility-fns NullSelect": {
+		"prefix": ["ufnsel", "uf-nsel", "NullSelect"],
+		"body": [
+			"NullSelect(${1:value})"
+		],
+		"description": "utility-fns NullSelect"
+	},
+	"utility-fns NullPicture": {
+		"prefix": ["ufnp", "uf-np", "NullPicture"],
+		"body": [
+			"NullPicture(${1:value})"
+		],
+		"description": "utility-fns NullPicture"
+	},
+	"utility-fns NullToPoint": {
+		"prefix": ["ufntp", "uf-ntp", "NullToPoint"],
+		"body": [
+			"NullToPoint(${1:value})"
+		],
+		"description": "utility-fns NullToPoint"
+	},
+	"utility-fns ZeroToNull": {
+		"prefix": ["ufztn", "uf-ztn", "ZeroToNull"],
+		"body": [
+			"ZeroToNull(${1:value})"
+		],
+		"description": "utility-fns ZeroToNull"
+	},
+	"utility-fns toStringSafe": {
+		"prefix": ["uftss", "uf-tss", "toStringSafe"],
+		"body": [
+			"toStringSafe(${1:value}, ${2:''})"
+		],
+		"description": "utility-fns toStringSafe"
+	},
+	"utility-fns isBlank": {
+		"prefix": ["ufib", "uf-ib", "isBlank"],
+		"body": [
+			"isBlank(${1:value})"
+		],
+		"description": "utility-fns isBlank"
+	},
+	"utility-fns import validation helpers": {
+		"prefix": ["ufv", "uf-validate"],
+		"body": [
+			"import { reqKeys, reqCheck, reqValues, reqValueCheck, validateRequiredKeys } from 'utility-fns';"
+		],
+		"description": "Import utility-fns validation helpers"
+	},
+	"utility-fns import payload helpers": {
+		"prefix": ["ufp", "uf-payload"],
+		"body": [
+			"import { cleanPayload, trimPayload, emptyToNull, nullToEmpty, removeEmptyKeys } from 'utility-fns';"
+		],
+		"description": "Import utility-fns payload helpers"
+	},
+	"utility-fns import object helpers": {
+		"prefix": ["ufo", "uf-object"],
+		"body": [
+			"import { getFirstValue, getPath, setPath, buildName, buildFullName, renameKeys, omitByKeys } from 'utility-fns';"
+		],
+		"description": "Import utility-fns object helpers"
+	},
+	"utility-fns import string helpers": {
+		"prefix": ["ufs", "uf-string"],
+		"body": [
+			"import { normalizeText, onlyDigits, maskText, padNumber, removeWhitespace } from 'utility-fns';"
+		],
+		"description": "Import utility-fns string helpers"
+	},
+	"utility-fns reqKeys full validate": {
+		"prefix": ["uf-reqkeys", "reqKeys"],
+		"body": [
+			"const onValidate = (_data: ${1:FormDataProps}) => {",
+			"\tconst valid = reqKeys(_data, [${2:'roleId', 'status'}], [${3:'seq'}], ${4:true});",
+			"\tsetSubmitted(!valid);",
+			"\treturn valid;",
+			"};"
+		],
+		"description": "Create onValidate with utility-fns reqKeys"
+	},
+	"utility-fns reqCheck full validate": {
+		"prefix": ["uf-reqcheck", "reqCheck"],
+		"body": [
+			"const onValidate = (_data: ${1:FormDataProps}) => {",
+			"\tconst result = reqCheck(_data, [${2:'roleId', 'status'}], [${3:'seq'}], ${4:true});",
+			"\tsetSubmitted(result.submitted);",
+			"\treturn result.valid;",
+			"};"
+		],
+		"description": "Create onValidate with utility-fns reqCheck result"
+	},
+	"utility-fns reqValues validate": {
+		"prefix": ["uf-reqvalues", "reqValues"],
+		"body": [
+			"const valid = reqValues([${1:data.roleId}, ${2:data.status}], [${3:data.seq}], ${4:true});"
+		],
+		"description": "Validate required values with utility-fns reqValues"
+	},
+	"utility-fns reqValueCheck full validate": {
+		"prefix": ["uf-reqvaluecheck", "reqValueCheck"],
+		"body": [
+			"const result = reqValueCheck([${1:data.roleId}, ${2:data.status}], [${3:data.seq}], ${4:true});",
+			"setSubmitted(result.submitted);",
+			"return result.valid;"
+		],
+		"description": "Validate direct values with utility-fns reqValueCheck result"
+	},
+	"utility-fns getFirstValue": {
+		"prefix": ["uf-first", "getFirstValue"],
+		"body": [
+			"const ${1:value} = getFirstValue(${2:payload}, [${3:'userId', 'user_id', 'username', 'login'}]);"
+		],
+		"description": "Get first non-empty value from possible object keys"
+	},
+	"utility-fns buildName": {
+		"prefix": ["uf-buildname", "buildName"],
+		"body": [
+			"const ${1:name} = buildName(${2:data}, [${3:'companyTitle', 'companyName'}]);"
+		],
+		"description": "Compose display text from selected keys"
+	},
+	"utility-fns buildFullName": {
+		"prefix": ["uf-fullname", "buildFullName"],
+		"body": [
+			"const ${1:fullName} = buildFullName(${2:data});"
+		],
+		"description": "Compose full name from title/name/surname fields"
+	},
+	"utility-fns cleanPayload": {
+		"prefix": ["uf-clean", "cleanPayload"],
+		"body": [
+			"const ${1:payload} = cleanPayload(${2:formData}, {",
+			"\ttrim: true,",
+			"\tremoveEmpty: true,",
+			"});"
+		],
+		"description": "Clean form payload before submit"
+	},
+	"utility-fns UUID": {
+		"prefix": ["uf-uuid", "generateUUID"],
+		"body": [
+			"const ${1:id} = generateUUID();"
+		],
+		"description": "Generate UUID with utility-fns"
+	},
+	"utility-fns UUID client": {
+		"prefix": ["uf-uuid-client", "generateUUIDClient"],
+		"body": [
+			"const ${1:id} = generateUUIDClient();"
+		],
+		"description": "Generate browser/client UUID with utility-fns"
+	},
+	"utility-fns UUID node": {
+		"prefix": ["uf-uuid-node", "generateUUIDNode"],
+		"body": [
+			"const ${1:id} = generateUUIDNode();"
+		],
+		"description": "Generate Node.js UUID with utility-fns"
+	},
+	"utility-fns date aliases": {
+		"prefix": ["uf-date", "formatDateTime"],
+		"body": [
+			"const ${1:dateText} = formatDateTime(${2:new Date()});"
+		],
+		"description": "Format date with utility-fns date aliases"
+	},
+	"utility-fns safeExecute": {
+		"prefix": ["uf-safe", "safeExecute"],
+		"body": [
+			"const ${1:value} = safeExecute(() => ${2:JSON.parse(rawText)}, ${3:{}});"
+		],
+		"description": "Run function safely with fallback value"
+	},
+	"utility-fns null examples": {
+		"prefix": ["uf-null-ex", "NullString"],
+		"body": [
+			"const ${1:text} = NullString(${2:value});",
+			"const ${3:numberValue} = NullInt(${4:value});",
+			"const ${5:list} = NullArray(${6:value});",
+			"const ${7:selectedValue} = NullSelect(${8:value});",
+			"const ${9:pointValue} = NullToPoint(${10:value});"
+		],
+		"description": "Common utility-fns null helper usage"
+	}
+}
